@@ -15,9 +15,9 @@ function getHeartPositions(count: number): { x: number; y: number }[] {
   const step = (Math.PI * 2) / count;
   for (let i = 0; i < count; i++) {
     const t = i * step - Math.PI;
-    const scale = 20;
+    const scale = 36;
     const cx = 50;
-    const cy = 50;
+    const cy = 45; // Moved slightly up since bottom extends more
     const x = cx + scale * 16 * Math.pow(Math.sin(t), 3) / 17;
     const y = cy - scale * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t)) / 17;
     positions.push({ x, y });
@@ -304,9 +304,7 @@ export default function GalleryScene({ visible, setStage }: Props) {
                 transform: `translate(-50%, -50%) rotate(${photo.initialRotation}deg)`,
               };
 
-          const cardWidth = isInHeart
-            ? Math.max(60, photo.width * 0.5)
-            : photo.width;
+          const cardWidth = photo.width;
 
           return (
             <div
