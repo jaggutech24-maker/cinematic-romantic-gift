@@ -169,15 +169,16 @@ export default function GalleryScene({ visible, setStage }: Props) {
     }))
   );
 
-  // Hidden hearts
+  // Cute floating emojis
+  const cuteEmojis = ['♥', '✨', '🦋', '🧸', '💖', '🎀'];
   const hiddenHearts = useRef(
-    Array.from({ length: 12 }, (_, i) => ({
+    Array.from({ length: 20 }, (_, i) => ({
       id: i,
-      left: `${5 + Math.random() * 90}%`,
-      top: `${5 + Math.random() * 90}%`,
-      delay: Math.random() * -8,
-      duration: 6 + Math.random() * 6,
-      size: 10 + Math.random() * 12,
+      emoji: cuteEmojis[Math.floor(Math.random() * cuteEmojis.length)],
+      left: `${Math.random() * 100}%`,
+      delay: Math.random() * -20,
+      duration: 8 + Math.random() * 12,
+      size: 16 + Math.random() * 16,
     }))
   );
 
@@ -198,7 +199,7 @@ export default function GalleryScene({ visible, setStage }: Props) {
           pointerEvents: visible ? 'all' : 'none',
           transition: 'opacity 1.5s ease',
           overflow: 'hidden',
-          background: 'radial-gradient(ellipse at 30% 40%, #2d0a17 0%, #1a0510 40%, #0d0306 100%)',
+          background: 'transparent',
         }}
       >
         {/* Floating petals */}
@@ -217,20 +218,19 @@ export default function GalleryScene({ visible, setStage }: Props) {
           </div>
         ))}
 
-        {/* Hidden hearts */}
+        {/* Hidden hearts and cute emojis */}
         {hiddenHearts.current.map(h => (
           <div
             key={`hh-${h.id}`}
             className="hidden-heart"
             style={{
               left: h.left,
-              top: h.top,
               fontSize: h.size,
               animationDuration: `${h.duration}s`,
               animationDelay: `${h.delay}s`,
             }}
           >
-            ♥
+            {h.emoji}
           </div>
         ))}
 

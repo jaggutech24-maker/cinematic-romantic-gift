@@ -16,7 +16,9 @@
 
 body {
   overflow: hidden;
-  background: #0d0608;
+  background: 
+    linear-gradient(rgba(255, 240, 245, 0.4), rgba(255, 230, 240, 0.6)),
+    url('./bg-love.jpg') center/cover no-repeat fixed;
   font-family: 'Lato', sans-serif;
   cursor: none;
 }
@@ -590,20 +592,25 @@ body {
   position: fixed;
   pointer-events: none;
   z-index: 52;
-  font-size: clamp(10px, 1.5vw, 16px);
-  color: rgba(255, 130, 170, 0.25);
-  animation: hiddenHeartFloat 8s ease-in-out infinite;
-  transition: color 0.5s ease, text-shadow 0.5s ease;
+  font-size: clamp(14px, 2vw, 24px);
+  color: rgba(255, 120, 160, 0.7);
+  text-shadow: 0 0 10px rgba(255, 180, 200, 0.8);
+  animation: hiddenHeartFloat 10s linear infinite;
+  transition: color 0.5s ease, text-shadow 0.5s ease, transform 0.3s ease;
 }
 
 .hidden-heart:hover {
-  color: rgba(255, 130, 170, 0.9) !important;
-  text-shadow: 0 0 15px rgba(255, 130, 170, 0.8);
+  color: rgba(255, 80, 130, 1) !important;
+  text-shadow: 0 0 20px rgba(255, 100, 150, 1);
+  transform: scale(1.5) !important;
 }
 
 @keyframes hiddenHeartFloat {
-  0%, 100% { transform: translateY(0) rotate(-5deg); }
-  50% { transform: translateY(-15px) rotate(5deg); }
+  0% { transform: translateY(110vh) translateX(0) scale(0.5) rotate(-20deg); opacity: 0; }
+  10% { opacity: 0.9; }
+  50% { transform: translateY(50vh) translateX(30px) scale(1.2) rotate(20deg); }
+  90% { opacity: 0.9; }
+  100% { transform: translateY(-10vh) translateX(-20px) scale(0.8) rotate(-10deg); opacity: 0; }
 }
 
 /* ===== PROGRESS HINT ===== */

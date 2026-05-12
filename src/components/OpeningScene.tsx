@@ -29,7 +29,7 @@ export default function OpeningScene({ visible, blooming, onGiftClick }: Props) 
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'radial-gradient(ellipse at center, #1a0510 0%, #0d0608 60%, #050203 100%)',
+          background: 'transparent',
           transition: 'opacity 1.5s ease',
           opacity: !visible ? 0 : 1,
           pointerEvents: !visible ? 'none' : 'all',
