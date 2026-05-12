@@ -181,6 +181,9 @@ export default function GalleryScene({ visible, setStage }: Props) {
     }))
   );
 
+  // Calculate static initial heart positions for the blooming phase
+  const initialHeartPositions = useRef(getHeartPositions(photos.length));
+
   return (
     <>
       <div
@@ -282,10 +285,12 @@ export default function GalleryScene({ visible, setStage }: Props) {
         )}
 
         {/* Polaroid Cards */}
-        {photos.map((photo) => {
+        {photos.map((photo, index) => {
           const isInHeart = heartMode;
           const heartPos = cardPositions[photo.id];
           const isLocked = photo.locked && !heartMode;
+
+          const initPos = initialHeartPositions.current[index % initialHeartPositions.current.length];
 
           const posStyle = isInHeart && heartPos
             ? {
@@ -294,8 +299,8 @@ export default function GalleryScene({ visible, setStage }: Props) {
                 transform: `translate(-50%, -50%) rotate(${heartPos.rot}deg)`,
               }
             : {
-                left: `${photo.initialX}%`,
-                top: `${photo.initialY}%`,
+                left: `${initPos.x}%`,
+                top: `${initPos.y}%`,
                 transform: `translate(-50%, -50%) rotate(${photo.initialRotation}deg)`,
               };
 
