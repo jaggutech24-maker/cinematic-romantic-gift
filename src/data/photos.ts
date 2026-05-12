@@ -18,7 +18,7 @@ export interface Photo {
 export const photos: Photo[] = [
   {
     id: 1,
-    src: '/photos/img1.jpeg',
+    src: './photos/img1.jpeg',
     label: 'golden hour',
     note: {
       title: 'The Pose I Fell For',
@@ -33,7 +33,7 @@ export const photos: Photo[] = [
   },
   {
     id: 2,
-    src: '/photos/img2.jpeg',
+    src: './photos/img2.jpeg',
     label: 'rainy café days',
     note: {
       title: '1:59 AM & Still The Cutest',
@@ -48,7 +48,7 @@ export const photos: Photo[] = [
   },
   {
     id: 3,
-    src: '/photos/img3.jpeg',
+    src: './photos/img3.jpeg',
     label: 'sunday mornings',
     note: {
       title: 'Braids, Glasses & My Whole Heart 🤍',
@@ -63,7 +63,7 @@ export const photos: Photo[] = [
   },
   {
     id: 4,
-    src: '/photos/img4.jpeg',
+    src: './photos/img4.jpeg',
     label: 'our little garden',
     note: {
       title: 'My Favourite Mirror Selfie',
@@ -78,7 +78,7 @@ export const photos: Photo[] = [
   },
   {
     id: 5,
-    src: '/photos/img5.jpeg',
+    src: './photos/img5.jpeg',
     label: 'dancing under stars',
     note: {
       title: 'Certified Cutie Energy ❤️✨',
@@ -93,7 +93,7 @@ export const photos: Photo[] = [
   },
   {
     id: 6,
-    src: '/photos/img6.jpeg',
+    src: './photos/img6.jpeg',
     label: 'her laughter',
     note: {
       title: 'Thumbs Up From My Favorite Human',
@@ -108,7 +108,7 @@ export const photos: Photo[] = [
   },
   {
     id: 7,
-    src: '/photos/img7.jpeg',
+    src: './photos/img7.jpeg',
     label: 'our cozy world',
     note: {
       title: 'The Cutest Entrance Ever',
@@ -123,7 +123,7 @@ export const photos: Photo[] = [
   },
   {
     id: 8,
-    src: '/photos/img8.jpeg',
+    src: './photos/img8.jpeg',
     label: 'our sunset',
     note: {
       title: 'Watching the sky with you',
@@ -138,7 +138,7 @@ export const photos: Photo[] = [
   },
   {
     id: 9,
-    src: '/photos/photo9.jpg',
+    src: './photos/photo9.jpg',
     label: 'for you, always',
     note: {
       title: 'Everything reminds me of you',
@@ -153,7 +153,7 @@ export const photos: Photo[] = [
   },
   {
     id: 10,
-    src: '/photos/img2.jpeg',
+    src: './photos/img2.jpeg',
     label: 'Future memories loading…',
     note: {
       title: 'Our story isn\'t finished',

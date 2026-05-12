@@ -16,7 +16,7 @@ export default function App() {
     audioStarted.current = true;
 
     try {
-      const audio = new Audio('/music.mp3');
+      const audio = new Audio('./music.mp3');
       audio.loop = true;
       audio.volume = 0.6; // Adjust volume if needed
       audio.play().catch(e => console.error("Audio playback failed:", e));
